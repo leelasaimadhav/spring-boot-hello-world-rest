@@ -24,6 +24,7 @@ pipeline {
                 sshagent(credentials: ['Ec2InstancesUsernamePrivateKey']){
                                     // some block
                                     sh "ssh -o StrictHostKeyChecking=no -l ec2-user 10.0.15.203 'whoami'"
+                                    sh " scp /var/lib/jenkins/.m2/repository/org/wyona/hello-world-webapp/1.0.0-SNAPSHOT/hello-world-webapp-1.0.0-SNAPSHOT.war ec2-user@10.0.15.203:."
 //                                     && \
 //                                     sudo apt update  && sudo apt install -y docker.io && \
 //                                     sudo usermod -aG docker ubuntu && \
