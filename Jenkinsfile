@@ -23,7 +23,7 @@ pipeline {
             steps{
                 sshagent(credentials: ['Ec2InstancesUsernamePrivateKey']){
                                     // some block
-                                    sh "ssh -o StrictHostKeyChecking=no -l ec2-user 10.0.15.203 'whoami"
+                                    sh "ssh -o StrictHostKeyChecking=no -l ec2-user 10.0.15.203 'whoami'"
 //                                     && \
 //                                     sudo apt update  && sudo apt install -y docker.io && \
 //                                     sudo usermod -aG docker ubuntu && \
