@@ -25,8 +25,8 @@ pipeline {
                                     // some block
                                     sh " scp /var/lib/jenkins/.m2/repository/org/wyona/hello-world-webapp/1.0.0-SNAPSHOT/hello-world-webapp-1.0.0-SNAPSHOT.war ec2-user@10.0.15.203:./hello-world.war"
                                     sh "ssh -o StrictHostKeyChecking=no -l ec2-user 10.0.15.203 'whoami && \
-                                     sudo yum install -y java-11-openjdk.x86_64 && \
-                                     nohup java -jar hello-world.war &'"
+                                     sudo yum install -y java-11-openjdk.x86_64'"
+                                    sh "ssh -o StrictHostKeyChecking=no -l ec2-user 10.0.15.203 'nohup java -jar hello-world.war &'"
                                 }
             }
         }
